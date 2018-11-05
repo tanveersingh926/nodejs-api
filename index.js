@@ -53,9 +53,8 @@ const server = http.createServer((req, res) => {
             const payloadString = JSON.stringify(payload)
 
             // Return the response
+            res.setHeader('Content-Type','application/json')
             res.writeHead(statusCode);
-
-            // Send the response
             res.end(payloadString);
 
             // Log the request path
@@ -78,7 +77,7 @@ const handlers = {};
 // Sample handler
 handlers.sample = (data, callback) => {
     // Callback a http status code, and a payload object 
-    callback(406, data)
+    callback(406, {"name":"Sample handler"})
 }
 
 // Not found handler
