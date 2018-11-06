@@ -8,6 +8,7 @@ const http = require('http');
 const url = require('url')
 const stringDecoder = require('string_decoder').StringDecoder
 
+console.log(process.env.NODE_ENV)
 // The server should respond to all requests with a string
 const server = http.createServer((req, res) => {
 
